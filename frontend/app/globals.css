@@ -1,0 +1,187 @@
+/*
+ * globals.css — JeevanMitra design system
+ * Feature: Global styles / design tokens
+ * Dependencies: tailwindcss v4, Plus Jakarta Sans (loaded via next/font)
+ * Future: swap --color-brand-primary to match official branding when finalised
+ */
+
+@import "tailwindcss";
+
+/* ── JeevanMitra brand palette (clean pale blue / white) ──────────────────── */
+@theme {
+  --color-brand-bg:      #EFF6FF;   /* page background — very pale blue       */
+  --color-brand-card:    #FFFFFF;   /* card / surface                          */
+  --color-brand-primary: #1D4ED8;   /* primary action, accents                 */
+  --color-brand-hover:   #1E40AF;   /* button hover / pressed                  */
+  --color-brand-light:   #DBEAFE;   /* tinted backgrounds, selected states     */
+  --color-brand-ring:    #93C5FD;   /* focus rings                             */
+  --color-brand-muted:   #BFDBFE;   /* lighter accent borders                  */
+  --color-brand-subtle:  #E0EEFF;   /* dividers, subtle borders                */
+  --color-brand-text:    #111827;   /* primary body text                       */
+  --color-brand-subtext: #6B7280;   /* secondary / muted text                  */
+
+  /* Semantic surface tokens */
+  --color-surface-1:     #F9FAFB;
+  --color-surface-2:     #F3F4F6;
+}
+
+@layer base {
+  :root {
+    --brand: #1D4ED8;
+    --brand-light: #93C5FD;
+    --brand-dark: #1E40AF;
+  }
+
+  * {
+    -webkit-tap-highlight-color: transparent;
+    box-sizing: border-box;
+  }
+
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-brand-bg text-brand-text min-h-screen;
+    font-family: var(--font-jakarta), "Plus Jakarta Sans", system-ui, sans-serif;
+  }
+
+  /* Visible focus outlines for keyboard navigation */
+  :focus-visible {
+    outline: 2px solid var(--brand-light);
+    outline-offset: 2px;
+  }
+}
+
+/* ── Entrance animations ──────────────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up {
+  animation: fadeUp 0.4s ease both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.animate-fade-in {
+  animation: fadeIn 0.35s ease both;
+}
+
+@keyframes slideRight {
+  from { opacity: 0; transform: translateX(-16px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+.animate-slide-right {
+  animation: slideRight 0.4s ease both;
+}
+
+/* Staggered entrance delays */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+
+/* ── Card hover — subtle elevation ───────────────────────────────────────── */
+.card-hover {
+  transition: box-shadow 0.22s ease, transform 0.22s ease;
+}
+.card-hover:hover {
+  box-shadow: 0 8px 28px rgba(29, 78, 216, 0.12);
+  transform: translateY(-3px);
+}
+
+/* ── Section divider ─────────────────────────────────────────────────────── */
+.section-divider {
+  border-top: 1px solid #E0EEFF;
+}
+
+/* ── Comparison table helpers ────────────────────────────────────────────── */
+.check-cell {
+  @apply text-emerald-600 font-bold;
+}
+.neutral-cell {
+  @apply text-amber-500 font-semibold;
+}
+.cross-cell {
+  @apply text-slate-400 font-semibold;
+}
+
+/* ══ AnimatedBikeRider — SVG + CSS animation ══════════════════════════════ */
+
+/* Wheel spin */
+@keyframes jm-wheel-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+.jm-wheel {
+  animation: jm-wheel-spin 0.9s linear infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+/* Rider + bike gentle vertical suspension bounce */
+@keyframes jm-bike-bob {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-5px); }
+}
+.jm-bike-bob {
+  animation: jm-bike-bob 1.6s ease-in-out infinite;
+}
+
+/* Road markings scroll — creates forward motion illusion */
+@keyframes jm-road-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-80px); }
+}
+.jm-road-marks {
+  animation: jm-road-scroll 0.55s linear infinite;
+}
+
+/* Background trees / hills slow parallax */
+@keyframes jm-bg-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-40px); }
+}
+.jm-bg-parallax {
+  animation: jm-bg-scroll 2.4s linear infinite;
+}
+
+/* Clouds drift even slower */
+@keyframes jm-cloud-drift {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-24px); }
+}
+.jm-cloud-drift {
+  animation: jm-cloud-drift 5s linear infinite;
+}
+
+/* Speed streaks */
+@keyframes jm-streak {
+  0%   { opacity: 0; transform: translateX(10px); }
+  40%  { opacity: 0.7; }
+  100% { opacity: 0; transform: translateX(-50px); }
+}
+.jm-streak-1 { animation: jm-streak 1.1s ease-out infinite; }
+.jm-streak-2 { animation: jm-streak 1.1s ease-out 0.38s infinite; }
+.jm-streak-3 { animation: jm-streak 1.1s ease-out 0.72s infinite; }
+
+/* Respect prefers-reduced-motion — pause all rider animations */
+@media (prefers-reduced-motion: reduce) {
+  .jm-wheel,
+  .jm-bike-bob,
+  .jm-road-marks,
+  .jm-bg-parallax,
+  .jm-cloud-drift,
+  .jm-streak-1,
+  .jm-streak-2,
+  .jm-streak-3 {
+    animation-play-state: paused;
+  }
+}

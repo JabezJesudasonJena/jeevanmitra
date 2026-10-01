@@ -1,0 +1,146 @@
+[
+  {
+    "id": "eshram",
+    "name": "e-Shram Card",
+    "nameHi": "ई-श्रम कार्ड",
+    "icon": "IdCard",
+    "color": "#4F46E5",
+    "tagline": "National ID for unorganised workers",
+    "benefit": "₹2 lakh accident insurance + social security benefits",
+    "what_you_get": ["₹2 lakh accident insurance", "Social security benefits", "Government scheme access", "National worker ID"],
+    "documents": ["aadhaar", "mobile", "bank"],
+    "eligibility": {
+      "ageMin": 16,
+      "ageMax": 59,
+      "incomeMax": 50000,
+      "occupations": ["delivery", "driver", "domestic", "construction", "vendor", "other"],
+      "needsAadhaar": true
+    }
+  },
+  {
+    "id": "pmsym",
+    "name": "PM-SYM Pension",
+    "nameHi": "पीएम-एसवाईएम पेंशन",
+    "icon": "PiggyBank",
+    "color": "#059669",
+    "tagline": "₹3,000/month pension after age 60",
+    "benefit": "Guaranteed ₹3,000 monthly pension at 60 years",
+    "what_you_get": ["₹3,000/month pension after 60", "Government matches your contribution", "Life coverage for spouse"],
+    "documents": ["aadhaar", "bank", "mobile"],
+    "eligibility": {
+      "ageMin": 18,
+      "ageMax": 40,
+      "incomeMax": 15000,
+      "occupations": ["delivery", "driver", "domestic", "construction", "vendor", "other"],
+      "needsAadhaar": true
+    }
+  },
+  {
+    "id": "ayushman",
+    "name": "Ayushman Bharat",
+    "nameHi": "आयुष्मान भारत",
+    "icon": "HeartPulse",
+    "color": "#DC2626",
+    "tagline": "Free health insurance up to ₹5 lakh/year",
+    "benefit": "Free hospital treatment up to ₹5 lakh per year",
+    "what_you_get": ["₹5 lakh health cover per year", "Cashless treatment at govt hospitals", "Covers pre-existing diseases", "Family covered"],
+    "documents": ["aadhaar", "ration", "mobile"],
+    "eligibility": {
+      "ageMin": 0,
+      "ageMax": 99,
+      "incomeMax": 20000,
+      "occupations": ["delivery", "driver", "domestic", "construction", "vendor", "other"],
+      "needsAadhaar": true
+    }
+  },
+  {
+    "id": "pmjjby",
+    "name": "PM Jeevan Jyoti Bima",
+    "nameHi": "पीएम जीवन ज्योति बीमा",
+    "icon": "Shield",
+    "color": "#D97706",
+    "tagline": "₹2 lakh life insurance for just ₹436/year",
+    "benefit": "₹2 lakh life insurance at only ₹436 per year",
+    "what_you_get": ["₹2 lakh on death", "Renews every year", "Auto-deducted from bank account"],
+    "documents": ["aadhaar", "bank", "mobile"],
+    "eligibility": {
+      "ageMin": 18,
+      "ageMax": 50,
+      "incomeMax": 50000,
+      "occupations": ["delivery", "driver", "domestic", "construction", "vendor", "other"],
+      "needsAadhaar": false
+    }
+  },
+  {
+    "id": "pmsby",
+    "name": "PM Suraksha Bima Yojana",
+    "nameHi": "पीएम सुरक्षा बीमा योजना",
+    "icon": "ShieldCheck",
+    "color": "#7C3AED",
+    "tagline": "Accident insurance for ₹20/year",
+    "benefit": "₹2 lakh accident cover at just ₹20 per year",
+    "what_you_get": ["₹2 lakh on accidental death", "₹1 lakh on partial disability", "Extremely low premium"],
+    "documents": ["aadhaar", "bank"],
+    "eligibility": {
+      "ageMin": 18,
+      "ageMax": 70,
+      "incomeMax": 50000,
+      "occupations": ["delivery", "driver", "domestic", "construction", "vendor", "other"],
+      "needsAadhaar": false
+    }
+  },
+  {
+    "id": "pmjdy",
+    "name": "Jan Dhan Account",
+    "nameHi": "जन धन खाता",
+    "icon": "Landmark",
+    "color": "#0891B2",
+    "tagline": "Zero-balance bank account with free RuPay card",
+    "benefit": "Free bank account + ₹10,000 overdraft + RuPay card",
+    "what_you_get": ["Zero balance bank account", "Free RuPay debit card", "₹10,000 overdraft facility", "₹1 lakh accident insurance"],
+    "documents": ["aadhaar", "photo"],
+    "eligibility": {
+      "ageMin": 10,
+      "ageMax": 99,
+      "incomeMax": 50000,
+      "occupations": ["delivery", "driver", "domestic", "construction", "vendor", "other"],
+      "needsAadhaar": true
+    }
+  },
+  {
+    "id": "bssk",
+    "name": "Building Workers Welfare",
+    "nameHi": "निर्माण श्रमिक कल्याण",
+    "icon": "HardHat",
+    "color": "#EA580C",
+    "tagline": "Special benefits for construction workers",
+    "benefit": "Education, housing, medical & pension benefits",
+    "what_you_get": ["Children's education scholarship", "Housing loan subsidy", "Medical reimbursement", "Maternity benefit"],
+    "documents": ["aadhaar", "bank", "photo", "work_cert"],
+    "eligibility": {
+      "ageMin": 18,
+      "ageMax": 60,
+      "incomeMax": 50000,
+      "occupations": ["construction"],
+      "needsAadhaar": true
+    }
+  },
+  {
+    "id": "pmkvy",
+    "name": "Skill India (PMKVY)",
+    "nameHi": "कौशल भारत (पीएमकेवीवाई)",
+    "icon": "GraduationCap",
+    "color": "#0D9488",
+    "tagline": "Free skill training + certificate + job help",
+    "benefit": "Free certified skill training with placement support",
+    "what_you_get": ["Free skill training course", "Government certificate", "Job placement help", "Stipend during training"],
+    "documents": ["aadhaar", "photo", "mobile"],
+    "eligibility": {
+      "ageMin": 15,
+      "ageMax": 45,
+      "incomeMax": 50000,
+      "occupations": ["delivery", "driver", "domestic", "construction", "vendor", "other"],
+      "needsAadhaar": true
+    }
+  }
+]
